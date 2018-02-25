@@ -107,12 +107,12 @@
 @living-street-width-z13:         2;
 @pedestrian-width-z13:            2;
 @bridleway-width-z13:             0.3;
-@footway-width-z13:               0.7;
-@cycleway-width-z13:              0.7;
-@track-width-z13:                 0.5;
-@track-grade1-width-z13:          0.5;
-@track-grade2-width-z13:          0.5;
-@steps-width-z13:                 0.7;
+@footway-width-z13:               1.0;
+@cycleway-width-z13:              1.0;
+@track-width-z13:                 1.0;
+@track-grade1-width-z13:          2.0;
+@track-grade2-width-z13:          1.0;
+@steps-width-z13:                 1.0;
 
 @secondary-width-z14:             5;
 @tertiary-width-z14:              5;
@@ -135,8 +135,8 @@
 @footway-width-z15:               1;
 @cycleway-width-z15:              0.9;
 @track-width-z15:                 1.5;
-@track-grade1-width-z15:          0.75;
-@track-grade2-width-z15:          0.75;
+@track-grade1-width-z15:          3;
+@track-grade2-width-z15:          2;
 @steps-width-z15:                 3;
 
 @secondary-width-z16:            10;
@@ -1792,16 +1792,16 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           line/line-dasharray: 100,0;
         }
         [tracktype = 'grade2'] {
-          line/line-dasharray: 8.8,3.2;
+          line/line-dasharray: 9,1;
         }
         [tracktype = 'grade3'] {
-          line/line-dasharray: 5.6,4.0;
+          line/line-dasharray: 8,2;
         }
         [tracktype = 'grade4'] {
-          line/line-dasharray: 3.2,4.8;
+          line/line-dasharray: 6,2;
         }
         [tracktype = 'grade5'] {
-          line/line-dasharray: 1.6,6.4;
+          line/line-dasharray: 5,2;
         }
 
         [zoom >= 15] {
@@ -1810,16 +1810,16 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
             line/line-dasharray: 100,0;
           }
           [tracktype = 'grade2'] {
-            line/line-dasharray: 11,4;
+            line/line-dasharray: 11,2;
           }
           [tracktype = 'grade3'] {
-            line/line-dasharray: 7,5;
+            line/line-dasharray: 8,2;
           }
           [tracktype = 'grade4'] {
-            line/line-dasharray: 4,6;
+            line/line-dasharray: 6,2;
           }
           [tracktype = 'grade5'] {
-            line/line-dasharray: 2,8;
+            line/line-dasharray: 5,2;
           }
         }
       }
