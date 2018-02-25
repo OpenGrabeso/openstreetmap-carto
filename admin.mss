@@ -51,7 +51,7 @@ overlapping borders correctly.
   comp-op: darken;
 }
 
-#admin-text[zoom >= 16] {
+#admin-text[zoom >= 12][admin_level = '2'] {
   text-name: "[name]";
   text-face-name: @book-fonts;
   text-fill: @admin-boundaries;
