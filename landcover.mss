@@ -1,11 +1,13 @@
 // --- Parks, woods, other green things ---
 
-@grass: #cdebb0; // also grassland, meadow, common, village_green
-@scrub: #b5e3b5;
-@forest: #add19e;       // Lch(80,30,135)
+@garden: #D0DC50; // Orienteering-like
+
+@grass: #ffffff; // also grassland, meadow, common, village_green
+@scrub: #D0E0A0;
+@forest: #C0E0A0;       // Lch(80,30,135)
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145) also garden
-@orchard: #aedfa3; // also vineyard, plant_nursery
+@orchard: @garden; // also vineyard, plant_nursery
 
 // --- "Base" landuses ---
 
@@ -19,9 +21,9 @@
 @commercial-line: #d1b2b0;  // Lch(75,12,25)
 @industrial: #ebdbe8;       // Lch(89,9,330) (Also used for railway)
 @industrial-line: #c6b3c3;  // Lch(75,11,330) (Also used for railway-line)
-@farmland: #fbecd7;         // Lch(94,12,80)
+@farmland: #FFF8D0;         // Lch(94,12,80)
 @farmland-line: #d6c4ab;    // Lch(80,15,80)
-@farmyard: #f5dcba;         // Lch(89,20,80)
+@farmyard: @garden;         // Lch(89,20,80)
 @farmyard-line: #d1b48c;    // Lch(75,25,80)
 
 // --- Transport ----
@@ -36,7 +38,7 @@
 
 // --- Other ----
 
-@allotments: #eecfb3;       // Lch(85,19,70)
+@allotments: @garden;       // Lch(85,19,70)
 @bare_ground: #eee5dc;
 @campsite: #def6c0; // also caravan_site, picnic_site
 @cemetery: #aacbaf; // also grave_yard
@@ -689,16 +691,6 @@
     }
   }
 
-  //Also landuse = forest, converted in the SQL
-  [natural = 'wood'][zoom >= 13]::wood {
-    polygon-pattern-file: url('symbols/leaftype_unknown.svg'); // Lch(55,30,135)
-    [leaf_type = "broadleaved"] { polygon-pattern-file: url('symbols/leaftype_broadleaved.svg'); }
-    [leaf_type = "needleleaved"] { polygon-pattern-file: url('symbols/leaftype_needleleaved.svg'); }
-    [leaf_type = "mixed"] { polygon-pattern-file: url('symbols/leaftype_mixed.svg'); }
-    [leaf_type = "leafless"] { polygon-pattern-file: url('symbols/leaftype_leafless.svg'); }
-    polygon-pattern-alignment: global;
-    opacity: 0.4; // The entire layer has opacity to handle overlapping forests
-  }
 }
 
 #landuse-overlay {
