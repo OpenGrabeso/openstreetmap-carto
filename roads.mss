@@ -110,7 +110,7 @@
 @footway-width-z13:               1.0;
 @cycleway-width-z13:              1.0;
 @track-width-z13:                 1.0;
-@track-grade1-width-z13:          2.0;
+@track-grade1-width-z13:          2.5;
 @track-grade2-width-z13:          1.0;
 @steps-width-z13:                 1.0;
 
@@ -662,6 +662,9 @@
     }
 
     [feature = 'highway_track'] {
+	 [tracktype = 'grade1'] {
+	   line-width: @track-grade1-width-z13 + 2 * @casing-width-z12;
+	 }
       #bridges {
         [zoom >= 13][access != 'no'] {
           line-color: @bridge-casing;
@@ -1761,21 +1764,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     [feature = 'highway_track'] {
       [zoom >= 13][access != 'no'],
       [zoom >= 15] {
-        /* The white casing that you mainly see against forests and other dark features */
-        #roads-fill[zoom >= 15] {
-          background/line-opacity: 0.4;
-          background/line-color: @track-casing;
-          background/line-join: round;
-          background/line-cap: round;
-          background/line-width: @track-width-z15 + 2 * @paths-background-width;
-          /* With the heavier dasharrays on grade1 and grade2 it helps to make the casing a bit larger */
-          [tracktype = 'grade1'] {
-            background/line-width: @track-grade1-width-z15 + 2 * @paths-background-width;
-          }
-          [tracktype = 'grade2'] {
-            background/line-width: @track-grade2-width-z15 + 2 * @paths-background-width;
-          }
-        }
 
         /* Set the properties of the brown inside */
         line/line-color: @track-fill;
@@ -1790,6 +1778,8 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 
         [tracktype = 'grade1'] {
           line/line-dasharray: 100,0;
+	  line/line-color: @tertiary-fill;
+          line/line-width: @track-grade1-width-z15 - 2 * @casing-width-z15;
         }
         [tracktype = 'grade2'] {
           line/line-dasharray: 9,2;
@@ -1805,21 +1795,24 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         }
 
         [zoom >= 15] {
-          line/line-width: @track-width-z15;
           [tracktype = 'grade1'] {
             line/line-dasharray: 100,0;
           }
           [tracktype = 'grade2'] {
             line/line-dasharray: 11,2;
+            line/line-width: @track-width-z15;
           }
           [tracktype = 'grade3'] {
             line/line-dasharray: 8,2;
+            line/line-width: @track-width-z15;
           }
           [tracktype = 'grade4'] {
             line/line-dasharray: 6,2;
+            line/line-width: @track-width-z15;
           }
           [tracktype = 'grade5'] {
             line/line-dasharray: 5,2;
+            line/line-width: @track-width-z15;
           }
         }
       }
