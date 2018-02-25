@@ -19,8 +19,8 @@
 	line-clip:false;
 	line-offset: 1.5;
 	line-color: @marked-route-fill;
-	[route='hiking'],[route='foot']{
-		line-opacity: 0.75;
+	[route='hiking'][color!='international'],[route='foot'][color!='international']{
+		line-opacity: 0.9;
 		[color='red'] {
 			line-color: @marked-route-red;
 		}
@@ -36,7 +36,8 @@
 	}
 	[route='bicycle'],[route='mtb']{
 		line-color: @marked-route-bike;
-		line-dasharray: 5,5;
+		line-dasharray: 4,4;
+		line-offset: -2.5;
 	}
 	[zoom >= 15] {
 		line-offset: 3.0;

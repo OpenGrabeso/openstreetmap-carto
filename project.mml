@@ -2272,6 +2272,7 @@ Layer:
           tags->'operator' AS operator,
           tags->'network' AS network,
           CASE
+            WHEN (tags->'official_name:cs' IS NOT NULL) AND (tags->'network'='iwn') THEN 'international'
             WHEN tags->'kct_green' IS NOT NULL THEN 'green'
             WHEN tags->'kct_blue' IS NOT NULL THEN 'blue'
             WHEN tags->'kct_red' IS NOT NULL THEN 'red'
