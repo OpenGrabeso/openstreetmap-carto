@@ -616,15 +616,17 @@
 
 /* man_made=cutline */
 #landcover-line {
-  [zoom >= 14] {
-    line-width: 3;
+  [zoom >= 12] {
+    line-width: 1.5;
     line-join: round;
     line-cap: square;
     line-color: @grass;
-    [zoom >= 16] {
-      line-width: 6;
-      [zoom >= 18] {
-        line-width: 12;
+    line-dasharray: 8,3;
+    [zoom >= 15] {
+      line-width: 2;
+      line-dasharray: 10,4;
+      [zoom >= 17] {
+        line-width: 5;
       }
     }
   }

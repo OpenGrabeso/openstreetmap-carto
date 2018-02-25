@@ -1780,7 +1780,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         /* Set the properties of the brown inside */
         line/line-color: @track-fill;
         [access = 'no'] { line/line-color: @track-fill-noaccess; }
-        line/line-dasharray: 5,4,2,4;
+        line/line-dasharray: 6,3,2,3;
         line/line-cap: round;
         line/line-join: round;
         line/line-opacity: 0.8;
@@ -1792,7 +1792,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
           line/line-dasharray: 100,0;
         }
         [tracktype = 'grade2'] {
-          line/line-dasharray: 9,1;
+          line/line-dasharray: 9,2;
         }
         [tracktype = 'grade3'] {
           line/line-dasharray: 8,2;
