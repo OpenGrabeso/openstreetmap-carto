@@ -724,11 +724,14 @@
 }
 
 #area-barriers {
-  [zoom >= 16] {
-    line-color: #444;
-    line-width: 0.4;
+  [zoom >= 13] {
+    line-color: #000;
+    line-width: 0.6;
     [feature = 'barrier_hedge'] {
       polygon-fill: #aed1a0;
+    }
+    [zoom >= 16] {
+      line-width: 1.5;
     }
   }
 }

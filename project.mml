@@ -619,7 +619,7 @@ Layer:
           ) AS features
         ) AS area_barriers
     properties:
-      minzoom: 16
+      minzoom: 13
   - id: ferry-routes
     geometry: linestring
     <<: *extents
