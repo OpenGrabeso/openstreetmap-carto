@@ -590,7 +590,7 @@ Layer:
           ) AS features
         ) AS line_barriers
     properties:
-      minzoom: 14
+      minzoom: 13
   - id: cliffs
     geometry: linestring
     <<: *extents

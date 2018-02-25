@@ -737,7 +737,7 @@
 }
 
 .barriers {
-  [zoom >= 16] {
+  [zoom >= 16],[feature = 'barrier_fence'][zoom >= 13] {
     line-width: 0.4;
     line-color: #444;
   }
