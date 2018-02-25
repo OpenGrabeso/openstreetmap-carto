@@ -2278,7 +2278,14 @@ Layer:
             WHEN tags->'kct_red' IS NOT NULL THEN 'red'
             WHEN tags->'kct_yellow' IS NOT NULL THEN 'yellow'
             ELSE NULL
-          END AS color
+          END AS color,
+          CASE 
+            WHEN tags->'kct_green' IS NOT NULL THEN tags->'kct_green'
+            WHEN tags->'kct_blue' IS NOT NULL THEN tags->'kct_blue'
+            WHEN tags->'kct_red' IS NOT NULL THEN tags->'kct_red'
+            WHEN tags->'kct_yellow' IS NOT NULL THEN tags->'kct_yellow'
+            ELSE NULL
+          END AS kind
           FROM planet_osm_line
           WHERE route IN ('hiking', 'foot', 'mtb', 'bicycle')
         ) AS marked_routes

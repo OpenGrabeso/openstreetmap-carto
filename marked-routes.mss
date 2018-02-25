@@ -2,11 +2,11 @@
 @marked-route-width-z15:                 5.0;
 
 @marked-route-fill: #A02020; /* generic red */
-@marked-route-red: #F00000;
-@marked-route-green: #20C000;
+@marked-route-red: #E00000;
+@marked-route-green: #00D000;
 @marked-route-blue: #0000E0;
 @marked-route-yellow: #F0D000;
-@marked-route-bike: #FF00FF;
+@marked-route-bike: #E000E0;
 
 
 #marked-routes[zoom >= 10]{
@@ -35,6 +35,11 @@
 		}
 		[color='yellow'] {
 			line-color: @marked-route-yellow;
+		}
+		[kind!='major']{
+			line-dasharray: 4,4,1,4;
+			line-offset: 2.5;
+			line-opacity: 0.70;
 		}
 	}
 	[route='bicycle'],[route='mtb']{
