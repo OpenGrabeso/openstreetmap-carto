@@ -4,7 +4,7 @@
 
 @grass: #ffffff; // also grassland, meadow, common, village_green
 @scrub: #D0E0A0;
-@forest: #C0E0A0;       // Lch(80,30,135)
+@forest: #D0E8B0;
 @forest-text: #46673b;  // Lch(40,30,135)
 @park: #c8facc;         // Lch(94,30,145) also garden
 @orchard: @garden; // also vineyard, plant_nursery
