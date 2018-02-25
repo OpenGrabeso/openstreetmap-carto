@@ -1,15 +1,8 @@
-# OpenStreetMap Carto
+# OpenStreetMap Carto - hiking trails (esp. Czech)
 
 ![screenshot](../master/preview.png?raw=true)
 
-These are the CartoCSS map stylesheets for the Standard map layer on [OpenStreetMap.org](http://www.openstreetmap.org).
-
-These stylesheets can be used in your own cartography projects, and are designed
-to be easily customised. They work with [Kosmtik](https://github.com/kosmtik/kosmtik)
- and also with the command-line [CartoCSS](https://github.com/mapbox/carto) processor.
-
-Since August 2013 these stylesheets have been used on the OSMF tileservers (tile.openstreetmap.org), and
-are updated from each point release. They supersede the previous [XML-based stylesheets](https://github.com/openstreetmap/mapnik-stylesheets).
+Forked from gravitystorm/openstreetmap-carto
 
 # Installation
 
