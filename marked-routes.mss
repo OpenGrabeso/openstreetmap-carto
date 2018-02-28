@@ -1,3 +1,5 @@
+@marked-route-width-z10:                 1.0;
+@marked-route-width-z12:                 1.8;
 @marked-route-width-z13:                 3.0;
 @marked-route-width-z15:                 5.0;
 
@@ -10,8 +12,13 @@
 
 
 #marked-routes[zoom >= 10]{
-
+	line-width: @marked-route-width-z10;
   [zoom >= 12] {
+    line-width: @marked-route-width-z12;
+    [zoom >= 13] {
+      line-width: @marked-route-width-z13;
+    }
+  }
 	line-dasharray: 100,0;
 	line-cap: round;
 	line-join: round;
@@ -23,7 +30,7 @@
 	}
 	line-color: @marked-route-fill;
 	[route='hiking'][color!='international'],[route='foot'][color!='international']{
-		line-opacity: 0.90;
+    line-opacity: 0.90;
 		[color='red'] {
 			line-color: @marked-route-red;
 		}
@@ -51,9 +58,4 @@
 			line-offset: -4.0;
 		}
 	}
-
-	line-width: @marked-route-width-z13;
-
-  }
-
 }
