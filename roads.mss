@@ -15,7 +15,8 @@
 @cycleway-fill-noaccess: #9999ff;
 @bridleway-fill: green;
 @bridleway-fill-noaccess: #aaddaa;
-@track-fill: #000000;
+@track-fill-z12: #444;
+@track-fill-z13: #000;
 @track-fill-noaccess: #e2c5bb;
 @aeroway-fill: #bbc;
 @runway-fill: @aeroway-fill;
@@ -25,12 +26,13 @@
 @access-marking-living-street: #cccccc;
 
 @default-casing: white;
-@tertiary-casing: #8f8f8f;
-@residential-casing: #bbb;
+@tertiary-casing: #111;
+@residential-casing: #444;
+@track-casing: #222;
 @road-casing: @residential-casing;
 @service-casing: @residential-casing;
 @living-street-casing: @residential-casing;
-@pedestrian-casing: #999;
+@pedestrian-casing: #666;
 @path-casing: @default-casing;
 @footway-casing: @default-casing;
 @steps-casing: @default-casing;
@@ -110,6 +112,7 @@
 @footway-width-z13:               1.0;
 @cycleway-width-z13:              1.0;
 @track-width-z13:                 1.0;
+@track-grade1-width-z12:          1.0;
 @track-grade1-width-z13:          2.5;
 @track-grade2-width-z13:          1.0;
 @steps-width-z13:                 1.0;
@@ -196,11 +199,11 @@
 @cycleway-width-z19:              1.3;
 
 
-@major-casing-width-z11:          0.3;
+@major-casing-width-z11:          0.4;
 
-@casing-width-z12:                0.1;
-@secondary-casing-width-z12:      0.3;
-@major-casing-width-z12:          0.5;
+@casing-width-z12:                0.8;
+@secondary-casing-width-z12:      0.7;
+@major-casing-width-z12:          1.0;
 
 @casing-width-z13:                0.5;
 @residential-casing-width-z13:    0.5;
@@ -269,8 +272,8 @@
 @footway-oneway-arrow-color:      darken(@footway-fill, 35%);
 @steps-oneway-arrow-color:        darken(@steps-fill, 35%);
 @cycleway-oneway-arrow-color:     darken(@cycleway-fill, 25%);
-@track-oneway-arrow-color:        darken(@track-fill, 15%);
-@bridleway-oneway-arrow-color:    darken(@track-fill, 10%);
+@track-oneway-arrow-color:        darken(@track-fill-z13, 15%);
+@bridleway-oneway-arrow-color:    darken(@track-fill-z13, 10%);
 
 // Shield’s line wrap is based on OpenStreetMap data and not on line-wrap-width,
 // but lines are typically rather short, so we use narrow line spacing.
@@ -661,10 +664,15 @@
       }
     }
 
-    [feature = 'highway_track'] {
-	 [tracktype = 'grade1'] {
-	   line-width: @track-grade1-width-z13 + 2 * @casing-width-z12;
-	 }
+    [feature = 'highway_track'][zoom>=12] {
+      [tracktype = 'grade1'] {
+        line-width: @track-grade1-width-z12;
+        line-color: @track-fill-z12;
+        [zoom>=13] {
+          line-color: @track-casing;
+          line-width: @track-grade1-width-z13 + 2 * @casing-width-z13;
+        }
+      }
       #bridges {
         [zoom >= 13][access != 'no'] {
           line-color: @bridge-casing;
@@ -1766,7 +1774,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       [zoom >= 15] {
 
         /* Set the properties of the brown inside */
-        line/line-color: @track-fill;
+        line/line-color: @track-fill-z13;
         [access = 'no'] { line/line-color: @track-fill-noaccess; }
         line/line-dasharray: 6,3,2,3;
         line/line-cap: round;
@@ -1778,7 +1786,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
 
         [tracktype = 'grade1'] {
           line/line-dasharray: 100,0;
-	  line/line-color: @tertiary-fill;
+          line/line-color: @tertiary-fill;
           line/line-width: @track-grade1-width-z15 - 2 * @casing-width-z15;
         }
         [tracktype = 'grade2'] {
@@ -2280,7 +2288,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
   }
 
   [int_tc_type = 'track'][zoom >= 15] {
-    marker-fill: @track-fill;
+    marker-fill: @track-fill-z13;
     marker-width: 6;
     marker-height: 6;
     [zoom >= 17] {
@@ -2314,7 +2322,7 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
   }
 
   [feature = 'highway_track'][zoom >= 14] {
-    line-color: @track-fill;
+    line-color: @track-fill-z13;
     line-width: 1;
     line-dasharray: 5,4,2,4;
     line-cap: round;
