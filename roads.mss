@@ -101,9 +101,9 @@
 @motorway-width-z13:              6;
 @motorway-link-width-z13:         4;
 @trunk-width-z13:                 6;
-@primary-width-z13:               5;
-@secondary-width-z13:             5;
-@tertiary-width-z13:              4;
+@primary-width-z13:               4.5;
+@secondary-width-z13:             3.5;
+@tertiary-width-z13:              2.7;
 @residential-width-z13:           2.5;
 @service-width-z13:               0.8;
 @living-street-width-z13:         2;
@@ -205,18 +205,18 @@
 @secondary-casing-width-z12:      0.7;
 @major-casing-width-z12:          1.0;
 
-@casing-width-z13:                0.5;
-@residential-casing-width-z13:    0.5;
-@secondary-casing-width-z13:      0.35;
-@major-casing-width-z13:          0.5;
+@casing-width-z13:                0.9;
+@residential-casing-width-z13:    0.9;
+@secondary-casing-width-z13:      0.8;
+@major-casing-width-z13:          0.9;
 
-@casing-width-z14:                0.55;
-@secondary-casing-width-z14:      0.35;
-@major-casing-width-z14:          0.6;
+@casing-width-z14:                0.9;
+@secondary-casing-width-z14:      0.85;
+@major-casing-width-z14:          0.8;
 
-@casing-width-z15:                0.6;
-@secondary-casing-width-z15:      0.7;
-@major-casing-width-z15:          0.7;
+@casing-width-z15:                0.9;
+@secondary-casing-width-z15:      0.8;
+@major-casing-width-z15:          0.8;
 
 @casing-width-z16:                0.6;
 @secondary-casing-width-z16:      0.7;
@@ -670,7 +670,7 @@
         line-color: @track-fill-z12;
         [zoom>=13] {
           line-color: @track-casing;
-          line-width: @track-grade1-width-z13 + 2 * @casing-width-z13;
+          line-width: @track-grade1-width-z13;
         }
       }
       #bridges {
@@ -1803,9 +1803,6 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         }
 
         [zoom >= 15] {
-          [tracktype = 'grade1'] {
-            line/line-dasharray: 100,0;
-          }
           [tracktype = 'grade2'] {
             line/line-dasharray: 11,2;
             line/line-width: @track-width-z15;
