@@ -43,7 +43,7 @@
 		[color='yellow'] {
 			line-color: @marked-route-yellow;
 		}
-		[color!=""][kind!='major']{
+		[color!=""][kind!='major'][kind!='']{
 			line-dasharray: 4,4,1,4;
 			line-offset: 2.5;
 			line-opacity: 0.70;

@@ -2277,6 +2277,10 @@ Layer:
             WHEN tags->'kct_blue' IS NOT NULL THEN 'blue'
             WHEN tags->'kct_red' IS NOT NULL THEN 'red'
             WHEN tags->'kct_yellow' IS NOT NULL THEN 'yellow'
+            WHEN tags->'osmc:symbol' LIKE 'yellow:%' THEN 'yellow'
+            WHEN tags->'osmc:symbol' LIKE 'red:%' THEN 'red'
+            WHEN tags->'osmc:symbol' LIKE 'green:%' THEN 'green'
+            WHEN tags->'osmc:symbol' LIKE 'blue:%' THEN 'blue'
             ELSE NULL
           END AS color,
           CASE 
