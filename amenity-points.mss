@@ -2,8 +2,8 @@
 @wetland-text: darken(#4aa5fa, 25%); /* Also for marsh and mud */
 @shop-icon: #ac39ac;
 @shop-text: #939;
-@transportation-icon: #0092da;
-@transportation-text: #0066ff;
+@transportation-icon: #004040;
+@transportation-text: #003040;
 @accommodation-icon: @transportation-icon;
 @accommodation-text: @transportation-text;
 @airtransport: #8461C4; //also ferry_terminal
@@ -14,7 +14,7 @@
 @culture: @amenity-brown;
 @public-service: @amenity-brown;
 @man-made-icon: #555;
-@landform-color: #d08f55;
+@landform-color: #853;
 @leisure-green: darken(@park, 60%);
 
 @landcover-font-size: 10;
@@ -1390,7 +1390,7 @@
   [feature = 'natural_saddle'][zoom >= 15],
   [feature = 'tourism_viewpoint'][zoom >= 16] {
     text-name: "[name]";
-    text-size: @standard-font-size;
+    text-size: @standard-font-size+1;
     text-wrap-width: @standard-wrap-width;
     text-line-spacing: @standard-line-spacing-size;
     text-fill: darken(@landform-color, 30%);
